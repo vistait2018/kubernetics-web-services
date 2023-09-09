@@ -11,3 +11,12 @@ spec:
     ports:
       - containerPort: 8761
         name: sry
+
+ # to create your pod use template or get relevant template
+# See to it the you are logged in into docker
+# if you are not logged in 
+# kubectl create secret docker-registry regcred --docker-server=https://docker.pkg.github.com --docker-email=*****  docker-password=***** --docker-server=*****
+# then you can log in using docker login
+# deploy using kubectl apply -f .\FILENAME
+
+
