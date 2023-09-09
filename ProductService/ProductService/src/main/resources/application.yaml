@@ -1,0 +1,51 @@
+server:
+    port: 8081
+
+spring:
+    datasource:
+        url: jdbc:mysql://${DB_HOST:localhost}:3306/productdb
+        username: root
+        password: dorc
+        driverClassName: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+    application:
+        name: PRODUCT-SERVICE
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: https://dev-08250576.okta.com/oauth2/default
+
+
+management:
+    tracing:
+        sampling:
+            probability: 1.0
+
+
+logging:
+    file:
+        name: /logs/application-debug.log
+    level:
+        org:
+            springframework:
+                web: DEBUG
+        com:
+            pks:
+                ProductService: DEBUG
+    pattern:
+        level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
+
+
+
+
+
+
+
+
+
+
+
