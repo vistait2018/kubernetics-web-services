@@ -2,6 +2,14 @@ server:
   port: 9090
 
 spring:
+  redis:
+    host: redis
+    port:
+    exec:
+      command:
+        - /bin/my-script.sh
+    initialDelaySeconds: 60
+    timeoutSeconds: 10
   main:
     allow-bean-definition-overriding: true
   application:
